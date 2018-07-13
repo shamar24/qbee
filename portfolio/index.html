@@ -1,0 +1,200 @@
+<DOCtype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title> Tanyaradzwa Matasva</title>
+<style>
+html,body{
+background-color:black;
+min-height:100%;
+width:100%;
+padding:0;
+margin:0;
+margin:0 auto;
+background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+position:fixed;
+
+}
+html{
+min-height:100%;
+}
+#menubar{
+background-color:#334555;
+color:white;
+height:10%;
+width:20%;
+border-radius:0px 0px 40px 0px;
+position:fixed;
+top:0px;
+left:0px;
+padding-top:20px;
+z-index:10;
+}
+a{
+color:white;
+text-decoration:none;
+}
+#coverpage{
+background-color:rgba(2,2,2,0.3);
+padding-left:25%;
+min-height:100%;
+width:100%;
+padding-top:10%;
+position:absolute;
+z-index:1;
+
+
+}
+span{
+color:white;
+}
+h1{
+color:#334555;
+font-size:80;
+}
+#footer{
+background-color:#334555;
+width:20%;
+height:10%;
+border-radius:40px 0px 0px 0px;
+position:fixed;
+margin-right:0px;
+bottom:0px;
+right:0px;
+float:left;
+z-index:10;
+padding-top:30;
+
+}
+#main-container{
+background-color:black;
+min-height:100%;
+width:100%;
+padding:0;
+margin:0;
+margin:0 auto;
+}
+
+.drop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+    width:1px;
+    height:89px;
+    position: absolute;
+    bottom:200px;
+    -webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+  
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+    to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+    to {margin-top:900px;}
+    
+}
+@media only screen and (max-width:640px){
+#footer{
+background-color:#334555;
+width:35%;
+height:5%;
+border-radius:40px 0px 0px 0px;
+position:fixed;
+margin-right:0px;
+bottom:0px;
+right:0px;
+float:left;
+z-index:10;
+
+
+}
+
+#menubar{
+background-color:#334555;
+color:white;
+height:5%;
+width:70%;
+border-radius:0px 0px 40px 0px;
+position:fixed;
+top:0px;
+left:0px;
+
+z-index:10;
+}
+
+h1{
+color:#334555;
+font-size:80;
+}
+
+#coverpage{
+background-color:rgba(2,2,2,0.3);
+padding-left:15%;
+min-height:100%;
+width:100%;
+padding-top:20%;
+position:absolute;
+z-index:1;
+
+}
+
+}
+
+
+
+
+</style>
+<script src="jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="main-container" class="rain">
+<div id="menubar">
+<a href="#home">Home</a>
+<a href="#gallary">Gallery</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+<div id="coverpage">
+<span>I am</span>
+<h1>Shamar</h1>
+<span>fullstack developer</span>
+</div>
+<div id="footer">
+<a style=padding-left:40;padding-top:20>Contact me</a>
+</div>
+</div>
+</body>
+<script>
+   
+// number of drops created.
+var nbDrop = 858; 
+
+// function to generate a random number range.
+function randRange( minNum, maxNum) {
+  return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+// function to generate drops
+function createRain() {
+
+    for( i=1;i<nbDrop;i++) {
+    var dropLeft = randRange(0,1600);
+    var dropTop = randRange(-1000,1400);
+
+    $('.rain').append('<div class="drop" id="drop'+i+'"></div>');
+    $('#drop'+i).css('left',dropLeft);
+    $('#drop'+i).css('top',dropTop);
+    }
+
+}
+// Make it rain
+createRain();
+
+
+</script>
+</html>
